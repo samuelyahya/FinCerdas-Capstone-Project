@@ -1,0 +1,66 @@
+# --- OS / Sistem Operasi ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Editor & IDE ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+.project
+.classpath
+.settings/
+.project
+
+# --- Lingkungan Virtual Python (Virtual Environments) ---
+.venv/
+venv/
+ENV/
+env/
+python/
+active/
+*.venv
+
+# --- Cache & Kompilasi Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.ipython/
+
+# --- NodeJS / Frontend / Fullstack ---
+node_modules/
+/FullStack/node_modules/
+/FullStack/.next/
+/FullStack/dist/
+/FullStack/build/
+/FullStack/out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+.parcel-cache
+
+# --- Variabel Lingkungan & Kredensial Sensitif ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!*.env.example
