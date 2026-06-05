@@ -3,16 +3,20 @@
 
 **FinCerdas** adalah sebuah sistem berbasis kecerdasan buatan (AI) dan aplikasi modern untuk memprediksi serta mengelola risiko gagal bayar (*credit default*) kartu kredit nasabah secara cerdas. 
 
-Proyek ini dibangun sebagai bagian dari Capstone Project dengan arsitektur monorepo yang terbagi ke dalam dua modul utama: **AI** (Backend API & Machine Learning) dan **FullStack** (Aplikasi Dashboard & Antarmuka Pengguna).
+Proyek ini dibangun sebagai bagian dari Capstone Project dengan arsitektur monorepo yang terbagi ke dalam tiga modul utama: **DS** (Analisis Data & Dashboard Streamlit), **AI** (Backend API & Machine Learning), dan **FullStack** (Aplikasi Dashboard & Antarmuka Pengguna).
 
 ---
 
 ## 📁 Struktur Repositori
 
-Repositori ini disusun secara modular untuk memisahkan logika kecerdasan buatan dengan aplikasi dashboard utama:
+Repositori ini disusun secara modular untuk memisahkan analisis data science, logika kecerdasan buatan, dan aplikasi dashboard utama:
 
 ```text
 FinCerdas-Capstone-Project/
+├── DS/                 # Modul Data Science (Notebook Analisis & Dashboard Streamlit)
+│   ├── Dashboard Streamlit/ # Dashboard visualisasi data interaktif
+│   ├── Notebook/       # Jupyter Notebook untuk EDA & Feature Engineering
+│   └── README.md       # Dokumentasi detail analisis & cara menjalankan Streamlit
 ├── AI/                 # Modul Machine Learning / Deep Learning & FastAPI (Backend AI)
 │   ├── app.py          # FastAPI Server
 │   ├── README.md       # Dokumentasi setup detail & spesifikasi API modul AI
@@ -25,7 +29,20 @@ FinCerdas-Capstone-Project/
 
 ---
 
-## Komponen 1: AI (Credit Default Prediction API)
+## Komponen 1: DS (Data Science & Analytics)
+
+Modul **DS** berfokus pada analisis data eksploratif (EDA), rekayasa fitur (feature engineering), serta visualisasi metrik data dan performa model melalui dashboard interaktif.
+
+- **Teknologi**: Python, Streamlit, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook.
+- **Fitur**:
+  - Analisis korelasi dan distribusi data transaksi nasabah kartu kredit (*Default of Credit Card Clients Dataset*).
+  - Hasil proses Feature Engineering untuk model Deep Learning (seperti `total_bill`, `total_payment`, `debt_ratio`, `avg_delay`, dll.).
+  - Dashboard interaktif berbasis Streamlit untuk menyajikan ringkasan EDA dan metrik model.
+- **Lokasi Kode & Panduan**: Detail pengolahan data, instalasi dependensi, dan cara menjalankan dashboard visualisasi dapat ditemukan di **[DS/README.md]**.
+
+---
+
+## Komponen 2: AI (Credit Default Prediction API)
 
 Modul **AI** bertugas sebagai mesin prediksi risiko (*prediction engine*) berbasis **Deep Learning** yang dideploy sebagai layanan REST API mandiri.
 
@@ -34,11 +51,11 @@ Modul **AI** bertugas sebagai mesin prediksi risiko (*prediction engine*) berbas
   - Prediksi probabilitas gagal bayar nasabah secara *real-time* berbasis data transaksi 3 bulan terakhir.
   - Integrasi dengan **Gemini AI** (`gemini-2.0-flash`) untuk memberikan rekomendasi finansial personal secara asinkron.
   - Penanganan data imbalance menggunakan pembobotan kelas (*class weights*) pada fase training model.
-- **Lokasi Kode & Panduan**: Untuk petunjuk instalasi, aktivasi virtual environment (`.venv`), konfigurasi API Key Gemini, dan cara menjalankan server prediksi **[AI/README.md]**.
+- **Lokasi Kode & Panduan**: Untuk petunjuk instalasi, aktivasi virtual environment (`.venv`), konfigurasi API Key Gemini, dan cara menjalankan server prediksi silakan buka **[AI/README.md]**.
 
 ---
 
-## Komponen 2: FullStack (Aplikasi Dashboard)
+## Komponen 3: FullStack (Aplikasi Dashboard)
 
 Modul **FullStack** bertindak sebagai antarmuka pengguna (dashboard manajemen) yang memfasilitasi staf perbankan atau nasabah untuk melihat profil kredit, menginput data transaksi, dan memantau hasil analisis risiko gagal bayar serta saran finansial dari sistem.
 
@@ -47,6 +64,7 @@ Modul **FullStack** bertindak sebagai antarmuka pengguna (dashboard manajemen) y
   - Formulir input interaktif profil dan riwayat transaksi nasabah.
   - Tampilan visual tingkat risiko (*risk level*) dengan indikator warna (Rendah, Sedang, Tinggi).
   - Panel rekomendasi finansial dari Gemini AI terstruktur (Prioritas, Penting, Jangka Panjang).
+- **Lokasi Kode & Panduan**: Untuk panduan instalasi dan menjalankan dashboard web silakan buka [README.md]
 
 ---
 
@@ -60,18 +78,27 @@ Untuk memulai pengembangan atau menjalankan proyek ini di komputer lokal Anda:
    cd FinCerdas-Capstone-Project
    ```
 
-2. **Jalankan Backend AI**:
+2. **Jalankan Dashboard Streamlit (DS)**:
+   Masuk ke folder `DS/Dashboard Streamlit`, install dependency, lalu jalankan Streamlit:
+   ```bash
+   cd DS/Dashboard Streamlit
+   pip install -r requirements.txt
+   streamlit run dashboard.py
+   ```
+
+3. **Jalankan Backend AI**:
    Masuk ke folder `AI`, siapkan environment variable `.env`, buat virtual environment, lalu jalankan FastAPI:
    ```bash
-   cd AI
+   cd ../../AI
    # Detail instalasi lengkap ada di AI/README.md
    ```
 
-3. **Jalankan Aplikasi Dashboard**:
+4. **Jalankan Aplikasi Dashboard (FullStack)**:
    Masuk ke folder `FullStack` dan ikuti panduan instalasi spesifik di dalam folder tersebut untuk menjalankan aplikasi client/dashboard.
    ```bash
    cd ../FullStack
    ```
+
 
 ---
 
