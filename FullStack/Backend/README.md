@@ -1,16 +1,25 @@
-Fintech Cerdas Backend API
-Backend RESTful API untuk proyek Capstone Fintech Cerdas yang berfungsi sebagai jembatan antara frontend dan model Machine Learning. API ini menangani autentikasi pengguna, memproses prediksi risiko gagal bayar kartu kredit, serta menyimpan riwayat hasil analisis ke database.
+# Fintech Cerdas Backend API
 
-🚀 Tech Stack
-Node.js
-Express.js
-PostgreSQL (Supabase)
-JSON Web Token (JWT)
-Bcryptjs
-Axios
-CORS
-dotenv
-📂 Struktur Folder
+Backend RESTful API untuk proyek **Capstone Fintech Cerdas** yang berfungsi sebagai jembatan antara frontend dan model Machine Learning. API ini menangani autentikasi pengguna, memproses prediksi risiko gagal bayar kartu kredit, serta menyimpan riwayat hasil analisis ke database.
+
+---
+
+## 🚀 Tech Stack
+
+- Node.js
+- Express.js
+- PostgreSQL (Supabase)
+- JSON Web Token (JWT)
+- Bcryptjs
+- Axios
+- CORS
+- dotenv
+
+---
+
+## 📂 Struktur Folder
+
+```text
 src/
 ├── server.js
 ├── config/
@@ -29,19 +38,37 @@ src/
 │   └── analyses.controller.js
 └── services/
     └── ml.service.js
-⚙️ Instalasi
+```
+
+---
+
+## ⚙️ Instalasi
+
 Clone repository terlebih dahulu:
 
+```bash
 git clone https://github.com/deviiaulya/ProjectFintech.git
+```
+
 Masuk ke folder backend:
 
+```bash
 cd ProjectFintech/Backend
+```
+
 Install seluruh dependency:
 
+```bash
 npm install
-🔐 Environment Variables
-Buat file .env pada root project dan tambahkan konfigurasi berikut:
+```
 
+---
+
+## 🔐 Environment Variables
+
+Buat file `.env` pada root project dan tambahkan konfigurasi berikut:
+
+```env
 PORT=5000
 
 ML_API_URL=https://web-production-92448.up.railway.app
@@ -49,38 +76,75 @@ ML_API_URL=https://web-production-92448.up.railway.app
 DATABASE_URL=postgresql://postgres.[project]:[password]@[host]:5432/postgres
 
 JWT_SECRET=your_jwt_secret_key
-▶️ Menjalankan Server
+```
+
+---
+
+## ▶️ Menjalankan Server
+
 Jalankan server dengan perintah:
 
+```bash
 npm run start
+```
+
 Server akan berjalan pada:
 
+```text
 http://localhost:5000
-🌐 API Base URL
-https://gregarious-art-production-cac2.up.railway.app
-📌 API Endpoints
-Method	Endpoint	Deskripsi
-POST	/api/auth/register	Registrasi pengguna baru
-POST	/api/auth/login	Login dan mendapatkan token JWT
-GET	/api/user/profile	Mendapatkan data profil pengguna
-POST	/api/predict	Melakukan prediksi risiko gagal bayar kartu kredit
-GET	/api/analyses/history	Mendapatkan riwayat analisis pengguna
-GET	/api/analyses/:id	Mendapatkan detail analisis berdasarkan ID
-🔄 Alur Sistem
-Pengguna melakukan registrasi atau login.
-Backend memvalidasi data pengguna dan menghasilkan token JWT.
-Pengguna mengirimkan data kartu kredit melalui endpoint prediksi.
-Backend meneruskan data ke layanan Machine Learning menggunakan Axios.
-Model Machine Learning mengembalikan hasil prediksi risiko.
-Hasil prediksi disimpan ke database PostgreSQL.
-Pengguna dapat melihat riwayat dan detail analisis yang telah dilakukan.
-🚢 Deployment
-Backend API
-Platform: Railway
-URL: https://gregarious-art-production-cac2.up.railway.app
-Database
-Platform: Supabase
-Database: PostgreSQL
-👨‍💻 Tim Pengembang
-Proyek ini dikembangkan sebagai bagian dari Capstone Project Fintech Cerdas, yang bertujuan membantu pengguna memahami tingkat risiko gagal bayar kartu kredit melalui analisis berbasis Machine Learning.
+```
 
+---
+
+## 🌐 API Base URL
+
+```text
+https://gregarious-art-production-cac2.up.railway.app
+```
+
+---
+
+## 📌 API Endpoints
+
+| Method | Endpoint | Deskripsi |
+|----------|----------|----------|
+| POST | `/api/auth/register` | Registrasi pengguna baru |
+| POST | `/api/auth/login` | Login dan mendapatkan token JWT |
+| GET | `/api/user/profile` | Mendapatkan data profil pengguna |
+| POST | `/api/predict` | Melakukan prediksi risiko gagal bayar kartu kredit |
+| GET | `/api/analyses/history` | Mendapatkan riwayat analisis pengguna |
+| GET | `/api/analyses/:id` | Mendapatkan detail analisis berdasarkan ID |
+
+---
+
+## 🔄 Alur Sistem
+
+1. Pengguna melakukan registrasi atau login.
+2. Backend memvalidasi data pengguna dan menghasilkan token JWT.
+3. Pengguna mengirimkan data kartu kredit melalui endpoint prediksi.
+4. Backend meneruskan data ke layanan Machine Learning menggunakan Axios.
+5. Model Machine Learning mengembalikan hasil prediksi risiko.
+6. Hasil prediksi disimpan ke database PostgreSQL.
+7. Pengguna dapat melihat riwayat dan detail analisis yang telah dilakukan.
+
+---
+
+## 🚢 Deployment
+
+### Backend API
+
+- Platform: Railway
+- URL: https://gregarious-art-production-cac2.up.railway.app
+
+### Database
+
+- Platform: Supabase
+- Database: PostgreSQL
+
+---
+
+## 👨‍💻 Tim Pengembang
+
+Proyek ini dikembangkan sebagai bagian dari **Capstone Project Fintech Cerdas**, yang bertujuan membantu pengguna memahami tingkat risiko gagal bayar kartu kredit melalui analisis berbasis Machine Learning.
+
+---
