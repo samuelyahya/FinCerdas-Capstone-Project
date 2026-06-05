@@ -2,7 +2,7 @@
 
 Aplikasi web untuk analisis risiko gagal bayar kartu kredit berbasis Machine Learning. Dibangun dengan React + Vite.
 
-🔗 **Live Demo:** [https://anabilaa-xyz.github.io/fincerdas-frontend](https://anabilaa-xyz.github.io/fincerdas-frontend)
+🔗 **Live Demo:** [[https://anabilaa-xyz.github.io/fincerdas-frontend](https://anabilaa-xyz.github.io/fincerdas-frontend)](https://project-fintech-cerdas.vercel.app/)
 
 ---
 
